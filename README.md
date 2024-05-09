@@ -48,3 +48,6 @@ As a general rule, camelCase should be used to name everything.
 ### When use props?
 - Your component have a parent that use the same data
   - So you will import the store in the parent and pass just the data the child component needs via props
+ 
+### How to create a store?
+- [Read this and learn by yourself](https://github.com/ToMattBan/a-guide-to-follow/blob/main/How%20create%20stores.md)
