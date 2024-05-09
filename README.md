@@ -20,6 +20,8 @@ As a general rule, camelCase should be used to name everything.
 - Components must start with a capital letter
   - ```MyComponent``` instead of ```my-component``` or ```myComponent```
 
+</br>
+
 # About components
 ### Where to put them?
 - Componentes that are not a page must be in the components folder
@@ -34,6 +36,8 @@ As a general rule, camelCase should be used to name everything.
 ### When?
 - When your page have too much code and you want to split it
 - When you are repeating a lot of code
+
+</br>
 
 # Store or props?
 ### When use store?
