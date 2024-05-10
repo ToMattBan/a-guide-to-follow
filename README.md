@@ -7,8 +7,9 @@
 </br>
 
 # About names
-As a general rule, camelCase should be used to name everything.
 ### Everything
+- Names must use camelCase
+  - ```buttonColor``` instead of anything else
 - Names must have no more than 3 words
   - ```crypoSelected``` instead of ```theLastCryptoThatTheUserSelected```
 
