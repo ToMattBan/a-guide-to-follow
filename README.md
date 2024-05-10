@@ -20,6 +20,8 @@
 ### Components
 - Components must start with a capital letter
   - ```MyComponent``` instead of ```my-component``` or ```myComponent```
+- If the component is a modal it must end with "Modal"
+  - ```MyComponentModal``` instead of ```my-component-modal``` or ```MyComponent```
 
 </br>
 
