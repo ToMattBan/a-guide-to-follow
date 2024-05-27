@@ -42,6 +42,14 @@
 
 </br>
 
+# About how should I write this damn thing?
+### Directives
+- Always use shorthands!
+  - `:src="imageSrc"` instead of `v-bind:src="imageSrc"`
+  - `@click="clickHandler"` instead of `v-on:click="clickHandler"`
+
+</br>
+
 # Store or props?
 ### When use store?
 - Your component is independent
