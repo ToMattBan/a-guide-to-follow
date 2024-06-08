@@ -22,7 +22,11 @@
   - ```MyComponent``` instead of ```my-component``` or ```myComponent```
 - If the component is a modal it must end with "Modal"
   - ```MyComponentModal``` instead of ```my-component-modal``` or ```MyComponent```
-
+ 
+### Utils
+- The name of the util file must explain what kind of util functions the file have
+  - `errors.js` instead of `utils.js`
+- Don't know how to create a util file/function? [Read this and learn by yourself](https://github.com/ToMattBan/a-guide-to-follow/blob/main/How%20to%20create%20utils.md)
 </br>
 
 # About components
