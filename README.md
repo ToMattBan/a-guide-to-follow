@@ -20,6 +20,10 @@
 ### Components
 - Components must start with a capital letter
   - ```MyComponent``` instead of ```my-component``` or ```myComponent```
+- Components must have at least two words
+  - ```MainHeader``` instead of ````Header```
+- It should start with the context
+  - ```ClearSearchButton``` instead of ```ButtonToClearSearch```
 - If the component is a modal it must end with "Modal"
   - ```MyComponentModal``` instead of ```my-component-modal``` or ```MyComponent```
  
@@ -44,6 +48,11 @@
 - When your page have too much code and you want to split it
 - When you are repeating a lot of code
 
+### How to organize them?
+- First `template` then `script` and end with `style`
+- NEVER use logic on the template, instead, use a computed, a function, a watch, a ref, anything but to put the logic on template
+- ALWAYS use `scoped` on your style, and if you need to style a extern component, put everything inside a container with an id and use this id in the styles, so the css won't change anything besides this component
+
 </br>
 
 # About how should I write this damn thing?
@@ -51,6 +60,34 @@
 - Always use shorthands!
   - `:src="imageSrc"` instead of `v-bind:src="imageSrc"`
   - `@click="clickHandler"` instead of `v-on:click="clickHandler"`
+
+</br>
+
+# Stores
+### How to create a store and other things?
+- [Read this and learn by yourself](https://github.com/ToMattBan/a-guide-to-follow/blob/main/How%20create%20stores.md)
+
+</br>
+
+# Props
+### How create props?
+- NEVER just declare props
+- ALWAYS give context, at least, their type
+- ```
+  props: {
+    title: String
+  }
+  ``` 
+  or
+  ```
+  props:{ 
+    title: { 
+      type: String, 
+      required: true 
+    }
+  }
+  ``` 
+  instead of ```props: ['title']```
 
 </br>
 
@@ -63,6 +100,3 @@
 ### When use props?
 - Your component have a parent that use the same data
   - So you will import the store in the parent and pass just the data the child component needs via props
- 
-### How to create a store?
-- [Read this and learn by yourself](https://github.com/ToMattBan/a-guide-to-follow/blob/main/How%20create%20stores.md)
