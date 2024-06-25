@@ -21,7 +21,7 @@
 - Components must start with a capital letter
   - ```MyComponent``` instead of ```my-component``` or ```myComponent```
 - Components must have at least two words
-  - ```MainHeader``` instead of ````Header```
+  - ```MainHeader``` instead of ```Header```
 - It should start with the context
   - ```ClearSearchButton``` instead of ```ButtonToClearSearch```
 - If the component is a modal it must end with "Modal"
@@ -51,7 +51,9 @@
 ### How to organize them?
 - First `template` then `script` and end with `style`
 - NEVER use logic on the template, instead, use a computed, a function, a watch, a ref, anything but to put the logic on template
-- ALWAYS use `scoped` on your style, and if you need to style a extern component, put everything inside a container with an id and use this id in the styles, so the css won't change anything besides this component
+- ALWAYS use `scoped` on your style, and if you need to style a extern component, put everything inside a container with an id and use this id in the styles, so the css won't change anything besides this component:
+  ```<template> <div id="uniqueContainerID">{{ content }}</div>``` </br>
+  ```<style lang="scss"> #uniqueContainerID { everyRuleInsideThisSelector } </style>```
 
 </br>
 
@@ -73,11 +75,7 @@
 ### How create props?
 - NEVER just declare props
 - ALWAYS give context, at least, their type
-- ```
-  props: {
-    title: String
-  }
-  ``` 
+- `props: { title: String }` 
   or
   ```
   props:{ 
