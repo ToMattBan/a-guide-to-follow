@@ -50,7 +50,7 @@ It's easy, let's go
       }
     }
     ```
-  - And it's it, now you can use it like a variable:
+  - And that's it, now you can use it like a variable:
   - ```
     <span>{{ sharedData.userName }}</span>
     <span>{{ sharedData.userEmail }}</span>
