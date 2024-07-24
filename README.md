@@ -67,7 +67,7 @@
 
 # Stores
 ### How to create a store and other things?
-- [Read this and learn by yourself](https://github.com/ToMattBan/a-guide-to-follow/blob/main/How%20create%20stores.md)
+- [Read this and learn by yourself](https://github.com/ToMattBan/a-guide-to-follow/blob/main/How%20create%20and%20use%20stores.md)
 
 </br>
 
