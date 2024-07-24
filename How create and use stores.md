@@ -39,3 +39,19 @@ It's easy, let's go
     })();
     ```
   - To explain a little better. ```__filename``` is a node native variable, that returns the name of the file currently being runned. The nuxt server doesn't run the index.js file, so it won't have the ```__filename```. But the browsers it runs, so ```__filename``` starts existing
+
+- Now, I believe you want to use it, right? To do so, it's simple:
+  - Import the json in your component: `import sharedData from '../stores/sharedData.json'`
+  - Put it in your data 
+  - ```
+    data() {
+      return {
+       sharedData
+      }
+    }
+    ```
+  - And it's it, now you can use it like a variable:
+  - ```
+    <span>{{ sharedData.userName }}</span>
+    <span>{{ sharedData.userEmail }}</span>
+    ```
