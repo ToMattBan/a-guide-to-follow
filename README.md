@@ -63,6 +63,18 @@
   - `:src="imageSrc"` instead of `v-bind:src="imageSrc"`
   - `@click="clickHandler"` instead of `v-on:click="clickHandler"`
 
+### Conditionals
+- Every v-else NEEDS to be "opened"
+  - `<div v-else="">` instead of `<div v-else>`
+  - Why? This can avoid some rare problems after the app is build and in production.
+    
+### Commom Sense
+- Always put a space between symbols
+  - `this.user = that.user;` instead of `this.user=that.user;`
+  - `if (condition) {};` instead of `if(condition){};`
+- Always put a semicolon at the end of the lines (Avoid some problems with bundlers like webpack or vite)
+  - `this.user = that.user;` instead of `this.user = that.user`
+
 </br>
 
 # Stores
