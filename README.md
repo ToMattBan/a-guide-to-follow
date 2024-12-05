@@ -68,7 +68,21 @@
   - `<div v-else="">` instead of `<div v-else>`
   - Why? This can avoid some rare problems after the app is build and in production.
 - Try always to avoid a deny check
-  - `if (isCool) { putInTheFridge() } else { makeItCool() };` instead of `if (!isCool) { makeItCool() } else { putItInTheFridge() };`
+  - ```
+    if (isCool) {
+      putInTheFridge()
+    } else {
+      makeItCool()
+    };
+    ```
+    instead of
+    ```
+    if (!isCool) {
+      makeItCool()
+    } else {
+      putItInTheFridge()
+    };
+    ```
     
 ### Commom Sense
 - Always put a space between symbols
