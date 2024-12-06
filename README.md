@@ -14,7 +14,7 @@
   - ```crypoSelected``` instead of ```theLastCryptoThatTheUserSelected```
 
 ### Props
-- Vue accept kebab-case when passing props, but all props should de camelCase
+- Vue accept kebab-case when passing props, but all props should be camelCase
   - ```<component userName="" />``` instead of ```<component user-name="" />```
 
 ### Components
@@ -51,7 +51,7 @@
 ### How to organize them?
 - First `template` then `script` and end with `style`
 - NEVER use logic on the template, instead, use a computed, a function, a watch, a ref, anything but to put the logic on template
-- ALWAYS use `scoped` on your style, and if you need to style a extern component, put everything inside a container with an id and use this id in the styles, so the css won't change anything besides this component:
+- ALWAYS use `scoped` on your style, and if you need to style an external component, put everything inside a container with an id and use this id in the styles, so the css won't change anything besides this component:
   ```<template> <div id="uniqueContainerID">{{ content }}</div>``` </br>
   ```<style lang="scss"> #uniqueContainerID { everyRuleInsideThisSelector } </style>```
 
