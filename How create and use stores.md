@@ -41,18 +41,14 @@ It's easy, let's go
     ```
 - Now, I believe you want to use it, right? To do so, it's simple:
   - Import the json in your component: `import sharedData from '../stores/sharedData.json'`
-  - Put it in your data 
+  - Put it in a ref 
   - ```
-    data() {
-      return {
-       sharedData
-      }
-    }
+    const data = ref(sharedData);
     ```
   - And that's it, now you can use it like a variable:
   - ```
-    <span>{{ sharedData.userName }}</span>
-    <span>{{ sharedData.userEmail }}</span>
+    <span>{{ data.userName }}</span>
+    <span>{{ data.userEmail }}</span>
     ```
 </details>
 
