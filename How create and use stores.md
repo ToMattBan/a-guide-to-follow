@@ -3,7 +3,7 @@ It's easy, let's go
 
 ### In Nuxt3
 <details>
-  <summary>Nuxt 2 Stores</summary>
+  <summary>Nuxt 3 Stores</summary>
 
 - Create a folder called ```store``` in the root of the project
   - Inside this folder you will create your stores
