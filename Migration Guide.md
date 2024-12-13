@@ -65,3 +65,57 @@
 - Lucky you we also have a updated utils guide [here](https://github.com/ToMattBan/a-guide-to-follow/blob/main/How%20to%20create%20utils.md)
 - Just a heads up: Utils just deals with static data, composables deals with reactive data!
 - This is a good time to addapt everything to use TypeScript!
+
+#### And about the Vue files?
+
+- Vue3 bring us a new way to write vue files, the [composition api](https://vuejs.org/guide/extras/composition-api-faq.html)
+- But we DON'T NEED TO REWRITE EVERYTHING to addapt to this new API.
+- We can still use options API. There is just some little things that we will know when moving.
+
+## Step 6 - NEW Vue Files with TypeScript
+
+- So, as said before, we have a new way to write vue files, the [composition api](https://vuejs.org/guide/extras/composition-api-faq.html)
+- I will cover some stuff here, but I really recommend read the link above
+- First of all, when opening the script tag, we will do: `<script setup lang="ts">` (The lang="ts" is optional)
+- Now, instead of having the "blocks" of code, we will have a freely blank space. We will need to create just what we want.
+- In the place of the old `data(){}` we will have to create our variables in two ways:
+  - `const primitiveVariable = ref<type>(defaultValue)`
+    - Then, we will use as primitiveVariable.value
+    - Example: `const name = ref<string>('')` and then `name.value = "Fulano"`;
+  - `const objectVariable = ref<interface>(defaultValue)` (I will explain what is a interface down there)
+    - Then, we will use as objectVariable
+    - Example: `const address = ref<IAddress>({street: "", number: 0})` and then `address.number = 123`;
+- In the place of the old `mounted(){}` we will have `onMounted(() => {})`
+  - Example: `onMounted(() => { console.log('Component mounted') })`
+- In the place of the old `watch() {}` we will have a new way to create a watcher:
+  - `watch(whatIsBeingWatched, (newValue, oldValue) => {} )`
+  - Example `watch(paymentOption, (newValue, oldValue) => {if (newValue == 0) giveDiscount()} )`
+- In the place of the old `computed() {}` we will have a new way to create a computed value:
+  - `const variable = computed(() => {})`
+  - Example: `const fullName = computed(() => { return user.firstName + user.lastName })`
+- And the methods? The became "normal" functions in the same scope.
+
+## Step 7 - Type what?
+
+- TypeScript will help us with some error avoidance
+- It's easy to use, let's see the basic, that is what we need
+- To type a primitive variable, just put `: type`
+  - Example: `const name: string = ''`;
+  - This way, the IDE will give you an error if you try to assign anything that is not a string to the name variable
+  - Example2: `function checkName(name: string) {}`
+  - This way, the IDE will give you an error if you try to call the function passing something that isn't a string as parameter
+- To create a custom type, just put the values between |
+  - Example: `const action: "buy" | "sell" = "buy"`
+  - This way, the variable will just accept "buy" or "sell", nothing more
+  - Other options would be `number | string` or `undefined | "luggage"`
+- And then we have interfaces, that are like types for jsons, for example
+  - `interface IUser { name: string, age: number }`
+  - And to use `const user: IUser = { name: "", age: 0 }`
+- To have optional data, we can just put a ? and it will accept the "undefined" value, for example
+  - Example: `interface IUser { name: string, age?: number }`
+  - This way, we aren't forced to fill the age key, just the name one.
+  - Example2:`function checkName(name: string, surname?: string) {}`
+  - This way we DO NEED to give the name as string, but we don't need to give a surname when calling the function, but if we do, it will need to be a string
+
+## Step 8 - Finishing
+- Now is just to study more about Vue3 and TypeScript, but the basics are here
