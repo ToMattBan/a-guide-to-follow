@@ -29,16 +29,26 @@ It's easy, let's go
     ```
 - To finish, we need to export this function to be used, so we create a kind of "init" function:
   - ```
-    export default defineNuxtPlugin(nuxtApp => {
-      getData();
-    });
+    export default async function init() {
+      await getData();
+    };
     ```
-- Now, we need to tell nuxt to initializate our stores, so on nuxt.config.ts, add:
+- Now, we need to tell nuxt to initializate our stores, so on app.vue, add:
   - ```
-    plugins: [
-      { ssr: false, src: '~/store/index.ts' }
-    ]
+    import storeInit from './stores/index'
+
+    onBeforeMount(() => {
+      storeInit();
+    })
     ```
+    - You don't have a app.vue? Just create one on the root of the project with this content:
+      - ```
+        <template>
+          <NuxtLayout>
+            <NuxtPage />
+          </NuxtLayout>
+        </template>
+        ```
 - Now, I believe you want to use it, right? To do so, it's simple:
   - Import the json in your component: `import sharedData from '../stores/sharedData.json'`
   - Put it in a ref 
